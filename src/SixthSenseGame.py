@@ -27,14 +27,25 @@ class Boxes:
         while len(unlocked_boxes) < 6:
             print("Boxes to choose")
             if len(unlocked_boxes) == 0:
+                print("*" * 40)
                 for x in range(1, 7):
-                    print("Box %s" % x)
+                    print("BOX-%s|" % x, end='')
+                print()
+                print("*" * 40)
             else:
+                print("*" * 40)
                 for x in range(1, 7):
                     if x not in unlocked_boxes:
-                        print("Box %s" % x)
+                        print("BOX %s|" % x, end=' ')
+                print()
+                print("*" * 40)
+            while True:
+                your_choice = input("\nBOX? ")
+                if int(your_choice) not in unlocked_boxes:
+                    break
+                else:
+                    print("You have already unlocked this box. Choose again..")
 
-            your_choice = input("BOX:")
             unlocked_boxes.append(int(your_choice))
 
             print("You lost : %d" % self.box[int(your_choice) - 1])

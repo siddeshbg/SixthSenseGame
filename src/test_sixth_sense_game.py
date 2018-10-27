@@ -17,7 +17,7 @@ def test_all_boxes_contains_unique_value():
 
     values = set()
     for x in range(6):
-        print("Box %s = %s" % (x, boxes.box[x]))
+        print("Box %s = %s" % (x, boxes.box[x]), end=' ')
         values.add(boxes.box[x])
 
     assert 6 == len(values)
